@@ -12,6 +12,10 @@ import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+
+
 
 const promise = loadStripe(
   "pk_test_51HPvU9DFg5koCdLGJJbNo60QAU99BejacsvnKvT8xnCu1wFLCuQP3WBArscK3RvSQmSIB3N0Pbsc7TtbQiJ1vaOi00X9sIbazL"
@@ -44,6 +48,8 @@ function App() {
   }, []);
 
   return (
+
+    
     <Router>
       <div className="app">
         <Switch>
@@ -51,6 +57,7 @@ function App() {
             <Header />
             <Orders />
           </Route>
+          
           <Route path="/Following">
            
             <Following />
@@ -71,7 +78,26 @@ function App() {
           </Route>
           <Route path="/">
             <Header />
+
+      <AliceCarousel autoPlay autoPlayInterval="3000">
+        <img
+          className="sliderimg"
+          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
+          alt=""
+        />
+
+        <img className="sliderimg"
+        src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_45M_v2_1x._CB432458380_.jpg" 
+        alt=""/>
+
+        <img  className="sliderimg"
+        src="https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2020/May/Hero/Fuji_TallHero_Computers_1x._CB432469755_.jpg" 
+        alt=""/>
+        </AliceCarousel>
+
+
             <Home />
+            
           </Route>
         </Switch>
       </div>

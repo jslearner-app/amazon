@@ -99,8 +99,10 @@ function Payment() {
                     </div>
                     <div className='payment__address'>
                         <p>{user?.email}</p>
-                        <p>123 React Lane</p>
-                        <p>Los Angeles, CA</p>
+                        <form action="">
+                            <label htmlFor="adress">Address</label>
+                            <input type="text" id="Adress" />
+                        </form>
                     </div>
                 </div>
 

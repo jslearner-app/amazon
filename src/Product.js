@@ -3,9 +3,11 @@ import "./Product.css";
 import { useStateValue } from "./StateProvider";
 import StarIcon from "@material-ui/icons/Star";
 import Fade from "react-reveal/Fade"
-import Modal from "react-modal";
+
 
 function Product({ id, title, image, price, rating }) {
+
+  
   const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = () => {
@@ -42,7 +44,7 @@ function Product({ id, title, image, price, rating }) {
             ))}
         </div>
       </div>
-
+              
       <img src={image} alt="" />
 
       <button onClick={addToBasket}>Add to Basket</button>
